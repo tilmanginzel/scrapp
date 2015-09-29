@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="activated_color">#BDBDBD</drawable>
+    <drawable name="pressed_color">#E0E0E0</drawable>
+
+    <color name="primary" type="color">#009588</color>
+    <color name="secondary" type="color">#E99F25</color>
+</resources>

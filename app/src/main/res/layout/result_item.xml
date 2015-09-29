@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/item_bg_selector"
+              android:baselineAligned="false" >
+
+        <LinearLayout
+            android:id="@+id/ll_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="8dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp">
+                <View
+                    android:background="@drawable/result_timeline_circle"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center"
+                    android:layout_centerVertical="true"/>
+
+                <View
+                    android:id="@+id/v_timeline_circle_full"
+                    android:background="@drawable/result_timeline_circle_full"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/donut_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:rotation="270"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/donut_progress"
+                    android:repeatCount="infinite"/>
+
+                <ImageView
+                    android:id="@+id/iv_state"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:id="@+id/tv_automatic_scrape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:alpha="0.87"/>
+
+                <TextView
+                    android:id="@+id/tv_time_ago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:alpha="0.87"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <!-- fill gap between linear layouts -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary"
+                    android:alpha="0.87"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/tv_time_of_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:alpha="0.87"
+                    android:textSize="11sp"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>

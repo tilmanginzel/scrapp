@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- result timeline background line -->
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#EEEEEE"
+                android:layout_marginLeft="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout android:orientation="vertical"
+                              android:layout_width="match_parent"
+                              android:layout_height="72dp"
+                              android:padding="1dip"
+                              android:id="@+id/wv_result_wrap">
+                    <WebView
+                        android:id="@+id/wv_result"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <View
+                        android:id="@+id/toolbar_shadow"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@drawable/toolbar_dropshadow" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_subscription_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:alpha="0.87"
+                    android:textSize="20sp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/srl_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ListView
+                        android:id="@+id/lv_results"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:choiceMode="singleChoice"
+                        android:divider="@null"/>
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

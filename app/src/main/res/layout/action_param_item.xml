@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_action_param_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:textSize="12sp"
+        android:textColor="@color/secondary"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/tv_required"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textStyle="bold"
+            android:textColor="@color/secondary"
+            android:layout_gravity="bottom|left"/>
+
+        <TextView
+            android:id="@+id/tv_action_param_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="bottom|left"/>
+
+        <LinearLayout
+            android:id="@+id/ll_action_param_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="horizontal"/>
+    </LinearLayout>
+</LinearLayout>

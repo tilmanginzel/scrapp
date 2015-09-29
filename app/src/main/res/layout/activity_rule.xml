@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_rule_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:alpha="0.87"
+                android:textSize="20sp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"/>
+
+            <de.medieninf.mobcomp.scrapp.view.widget.ExpandablePanel
+                android:id="@+id/ep_rule_description"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                custom:handle="@+id/handle"
+                custom:content="@+id/value"
+                custom:collapsedHeight="32dp"
+                custom:animationDuration="25"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2" >
+
+                    <TextView
+                        android:id="@id/value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:id="@id/handle"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/expand"/>
+                </LinearLayout>
+            </de.medieninf.mobcomp.scrapp.view.widget.ExpandablePanel>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/configuration"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <Switch
+                    android:id="@+id/wifi_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/just_in_wlan"
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_timeslot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"/>
+
+            <ProgressBar
+                android:id="@+id/pb_load_actions"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ll_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

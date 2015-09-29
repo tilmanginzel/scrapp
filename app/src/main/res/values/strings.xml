@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- general-->
+    <string name="app_name">Scrapp</string>
+
+    <!-- menu -->
+    <string name="open_drawer">Linke Navigation öffnen</string>
+    <string name="close_drawer">Linke Navigation schließen</string>
+    <string name="menu_my_subscriptions">Meine Abos</string>
+    <string name="menu_all_rules">Alle Regeln</string>
+    <string name="page">Zur Website</string>
+    <string name="registration_pending">Registrierung läuft&#8230;</string>
+    <string name="registered_since">Registriert seit</string>
+    <string name="refresh">Parsen</string>
+    <string name="subscription_activity_name">Abo</string>
+    <string name="rule_activity_title">Regel</string>
+
+    <!-- rule/subscription configuration -->
+    <string name="menu_subscribe">Abonnieren</string>
+    <string name="unsubscribe">Deabonnieren</string>
+    <string name="configurate">Konfigurieren</string>
+    <string name="add_rule">Hinzufügen</string>
+    <string name="configuration">Konfiguration</string>
+    <string name="description">Beschreibung</string>
+
+    <string name="time_config">Scrape-Zeit</string>
+    <string name="frequency">Häufigkeit</string>
+    <string name="entity">Einheit</string>
+    <string name="interval">Interval</string>
+
+    <!-- several -->
+    <string name="no_results">Noch kein Ergebnis vorhanden.</string>
+    <string name="def_hint">Definition der Regelvorschrift im JSON-Format</string>
+    <string name="tv_no_subscriptions">Du hast noch keine Regeln abonniert.</string>
+    <string name="result_notification_title">Neue Daten gefunden</string>
+    <string name="parsing_error">Es gab ein Problem beim Parsen! Bitte nochmals versuchen!</string>
+    <string name="just_moment_please">Einen Moment bitte&#8230;</string>
+    <string name="scrapp_surfing">Scrapp surft für dich&#8230;</string>
+    <string name="error_state">¯\\_(ツ)_/¯</string>
+
+    <!-- web view activity-->
+    <string name="html_template_path">html/result.html</string>
+    <string name="base_url">file:///android_asset/</string>
+    <string name="html_type">text/html</string>
+    <string name="encoding">UTF-8</string>
+
+    <string name="start_time">Start-Zeitpunkt</string>
+    <string name="clock">Uhr</string>
+    <string name="title">Titel</string>
+    <string name="just_in_wlan">Nur im WLAN</string>
+    <string name="rule">Vorschrift</string>
+    <string name="expand">Ausklappen</string>
+    <string name="expression">Ausdruck:</string>
+    <string name="url">Url:</string>
+
+    <string name="automatic">Automatisch</string>
+    <string name="manually">Manuell</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="no">Nein</string>
+    <string name="yes">Ja</string>
+    <string name="display_expression">Anzeige:</string>
+    <string name="required_param_missing">Fülle zuerst alle Pflichtfelder aus</string>
+</resources>

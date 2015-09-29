@@ -1,0 +1,107 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.medieninf.mobcomp.scrapp">
+
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission android:name="de.medieninf.mobcomp.scrapp.permission.C2D_MESSAGE"
+                android:protectionLevel="signature" />
+    <uses-permission android:name="de.medieninf.mobcomp.scrapp.permission.C2D_MESSAGE" />
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".view.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SubscriptionActivity"
+                  android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MainActivity" />
+        </activity>
+
+        <activity android:name=".view.WebViewActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.SubscriptionActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.RuleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.MainActivity" />
+        </activity>
+
+        <!-- GCM Receiver -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="de.medieninf.mobcomp.scrapp" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Alarm Receiver -->
+        <receiver android:name='.util.alarm.AlarmReceiver'
+            android:enabled="true"/>
+
+        <!-- BootReceiver -->
+        <receiver android:name=".util.alarm.BootReceiver"
+                  android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Service for receiving GCM messages -->
+        <service
+            android:name=".notification.GcmNotificationListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <!-- Service for receiving InstanceID changes -->
+        <service
+            android:name=".notification.GcmInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+
+        <!-- Service for REST calls to server. -->
+        <service android:name=".rest.service.RestService" android:exported="false" />
+
+        <!-- Service for network operations from fullscreen web view. -->
+        <service android:name=".util.WebService" android:exported="false" />
+
+        <!-- Service for renewing alarms after reboot. -->
+        <service android:name=".util.alarm.AlarmService" android:exported="false" />
+
+        <!-- Content Provider-->
+        <provider
+            android:name=".database.ScrappProvider"
+            android:authorities="de.medieninf.mobcomp.provider.scrapp"
+            android:exported="false" />
+    </application>
+</manifest>
