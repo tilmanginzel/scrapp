@@ -13,7 +13,7 @@ A full description of the process, possible use cases and implementation details
 See [scrapp-server](https://github.com/tilmanginzel/scrapp-server/) for the backend implementation.
 
 ## Screenshots
-<img src="screenshot-01.png" width="350px" />
-<img src="screenshot-02.png" width="350px" />
-<img src="screenshot-03.png" width="350px" />
-<img src="screenshot-04.png" width="350px" />
+<span><img src="screenshot-01.png" width="350px" /></span>
+<span><img src="screenshot-02.png" width="350px" /></span>
+<span><img src="screenshot-03.png" width="350px" /></span>
+<span><img src="screenshot-04.png" width="350px" /></span>
